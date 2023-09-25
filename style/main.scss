@@ -1,2 +1,11 @@
-@use "/style/generic/reset"
+@import "/style/generic/reset";
+@import "./settings/colors.scss";
 
+@import "/style/elements/navbar";
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+}

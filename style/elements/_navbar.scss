@@ -1,0 +1,21 @@
+.navigation {
+    background-color: $color2;
+    
+    .container {
+        justify-content: space-between;
+        height: 3em;
+        align-items: center;
+        .navigation__list {
+            display: flex;
+            width: 60%;
+            justify-content: space-around;
+            .navigation__list__element{
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+                
+        }
+    }
+}

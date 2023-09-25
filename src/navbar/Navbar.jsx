@@ -1,0 +1,23 @@
+import React from "react";
+
+export const Navbar = () => {
+
+
+    return (
+        <nav className="navigation">
+            <div className="container">
+                <div className="navigation__logo">
+                    <h1>Muszelkowa Apatamenty</h1>
+                </div>
+
+                <ul className="navigation__list">
+                    <li className="navigation__list__element"><a href="#"><i className="fa-solid fa-person-biking"></i>&nbsp;Atrakcje</a></li>
+                    <li className="navigation__list__element"><a href="#"><i className="fa-solid fa-location-dot"></i>&nbsp;Lokalizacja</a></li>
+                    <li className="navigation__list__element"><a href="#"> <i className="fa-solid fa-calendar-days"></i>&nbsp;Sprawdź Dostępne Terminy</a></li>
+                    <li className="navigation__list__element"><a href="#"><i className="fa-regular fa-envelope"></i>&nbsp;Kontakt</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    )
+}
