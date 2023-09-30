@@ -1,10 +1,16 @@
 .navigation {
     background-color: $color2;
+    font-family: 'Poppins', sans-serif;
     
     .container {
         justify-content: space-between;
         height: 3em;
         align-items: center;
+        .navigation__logo {
+            .logo__title {
+                color: #fff;
+            }
+        }
         .navigation__list {
             display: flex;
             width: 60%;
@@ -13,6 +19,9 @@
                 a {
                     color: #fff;
                     text-decoration: none;
+                    &:hover {
+                        color: $color3;
+                    }
                 }
             }
                 

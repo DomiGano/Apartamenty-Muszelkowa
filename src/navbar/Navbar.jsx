@@ -4,10 +4,10 @@ export const Navbar = () => {
 
 
     return (
-        <nav className="navigation">
+        <nav className="navigation" style={{}}>
             <div className="container">
                 <div className="navigation__logo">
-                    <h1>Muszelkowa Apatamenty</h1>
+                    <h1 className="logo__title">Muszelkowa Apatamenty</h1>
                 </div>
 
                 <ul className="navigation__list">
