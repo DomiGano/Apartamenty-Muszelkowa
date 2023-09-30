@@ -1,0 +1,18 @@
+.container {
+    .calendar {
+        font-family: 'Poppins', sans-serif;
+        padding: 5em;
+        background-color: $color2;
+        margin: 5em 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .calendar__title {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 1em;
+        }
+    }
+}

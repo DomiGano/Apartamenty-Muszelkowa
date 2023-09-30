@@ -8,15 +8,18 @@ const localizer = momentLocalizer(moment);
 
 export const MyCalendar = (props) => {
   return (
-    <div>
+    <div className='container'>
+      <div className='calendar'>
+        <h1 className='calendar__title'>Sprawdź dostępne terminy</h1>
       <Calendar
         localizer={localizer}
         events={props.events}
         views={['month']}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500,  width: 1000, backgroundColor: "gray"}}
+        style={{ height: 500,  width: "100%", backgroundColor: "#FFF"}}
       />
+      </div>
     </div>
   );
 }
