@@ -9,7 +9,6 @@ export const App = () => {
 
   return (
     <>
-    <img  style={{width: "100%"}} src={polankipark}></img>
     <Navbar/>
     <Attractions/>
     <MyCalendar/>

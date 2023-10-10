@@ -9,8 +9,8 @@ const myEvents = [
 {        
   id: 1,
   title: 'REZERWACJA',
-  start: new Date(2023, 8, 21, 0, 0, 0),
-  end: new Date(2023, 8, 30, 23, 59, 59)
+  start: new Date(2023, 9, 21, 0, 0, 0),
+  end: new Date(2023, 9, 30, 23, 59, 59)
 },
 {        
   id: 2,
