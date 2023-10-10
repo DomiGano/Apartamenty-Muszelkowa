@@ -1,7 +1,21 @@
 import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
+import "moment/locale/pl";
 
+
+const messages = {
+  allDay: 'Cały dzień',
+  previous: 'Poprzedni',
+  next: 'Następny',
+  today: 'Dziś',
+  month: 'Miesiąc',
+  week: 'Tydzień',
+  day: 'Dzień',
+  date: 'Data',
+  time: 'Czas',
+  
+};
 
 const localizer = momentLocalizer(moment);
 
@@ -28,6 +42,7 @@ export const MyCalendar = (props) => {
         <div className='calendar'>
           <h1 className='calendar__title'>Sprawdź dostępne terminy</h1>
         <Calendar
+          messages={messages}
           localizer={localizer}
           events={myEvents}
           views={['month']}

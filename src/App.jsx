@@ -12,7 +12,6 @@ export const App = () => {
     <Navbar/>
     <Attractions/>
     <MyCalendar/>
-    <h1>Apartamenty Muszelkowa</h1>
     </>
   )
 }
