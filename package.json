@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/auth-helpers-react": "^0.4.2",
     "@supabase/supabase-js": "^2.37.0",
+    "firebase": "^10.4.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-big-calendar": "^1.8.4",
