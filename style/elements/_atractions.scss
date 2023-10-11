@@ -7,6 +7,7 @@
         position: relative;
         .carusela__mainbox {
             background-color: $color2;
+            box-shadow: inset 0 10px 50px #000;
             border-radius: 10px;
             display: flex;
             .carusela__textbox {
@@ -43,7 +44,7 @@
             position: absolute;
             top: 50%;
             padding: 0;
-            transform: translateY(-50%);
+            transform: translateY(-100%);
             padding: 0.3em;
             background-color: #fff;
             i{
