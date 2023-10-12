@@ -1,10 +1,16 @@
 @import "/style/generic/reset";
 @import "./settings/colors.scss";
+@import "./settings/buttons.scss";
 
 @import "/style/elements/navbar";
 @import "/style/elements/myCalendar";
+@import "/style/elements/calendarMenu";
 @import "/style/elements/atractions";
 @import 'react-big-calendar/lib/sass/styles';
+
+* {
+    box-sizing: border-box;
+}
 
 .container {
     display: flex;

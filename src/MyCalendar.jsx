@@ -4,64 +4,41 @@ import moment from 'moment';
 import 'moment/locale/pl';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
+import { CalendarForm } from './CalendarForm';
 
 export const MyCalendar = (props) => {
   const [myEvents, setMyEvents] = useState([]);
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const [dataFetched, setDataFetched] = useState(false);
 
-
-//Firebase pobieranie danyc z bazy danych oraz konwersja tych danych do state w celu późniejszego ich otworzenia w kalendarzu
+  // Firebase pobieranie danych z bazy danych oraz konwersja tych danych do stanu w celu późniejszego ich otworzenia w kalendarzu
   useEffect(() => {
-    const fetchData = () => {
-      getDocs(collection(db, 'events'))
-        .then((querySnapshot) => {
-          const events = [];
-  
-          querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            events.push({
-              id: doc.id,
-              title: 'REZERWACJA',
-              start: new Date(data.start),
-              end: new Date(data.end),
-            });
+    if (!dataFetched) {
+      fetchData();
+    }
+  }, [dataFetched]);
+
+  const fetchData = () => {
+    getDocs(collection(db, 'events'))
+      .then((querySnapshot) => {
+        const events = [];
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          events.push({
+            id: doc.id,
+            title: 'REZERWACJA',
+            start: new Date(data.start),
+            end: new Date(data.end),
           });
-  
-          setMyEvents(events);
-        })
-        .catch((error) => {
-          console.error('Error getting documents:', error);
         });
-    };
-  
-    fetchData();
-  }, [myEvents]);  
 
-// Dodawanie danych do bazy danych 
-
-const addToCalendar = () => {
-  addDoc(collection(db, "events"), {
-    start: startDate,
-    end: endDate,
-  })
-    .then((docRef) => {
-      alert("Termin został zarezerwowany");
-    })
-    .catch((e) => {
-      console.error("Error adding document: ", e);
-    });
-    setEndDate('')
-    setStartDate('')
-};
-
-const handleStartDateChange = (event) => {
-  setStartDate(event.target.value);
-};
-
-const handleEndDateChange = (event) => {
-  setEndDate(event.target.value);
-};
+        setMyEvents(events);
+        setDataFetched(true);
+      })
+      .catch((error) => {
+        console.error('Error getting documents:', error);
+      });
+  };
 
   const messages = {
     previous: 'Poprzedni',
@@ -72,6 +49,7 @@ const handleEndDateChange = (event) => {
   const localizer = momentLocalizer(moment);
 
   return (
+    <>
     <div className='main__calendar__box'>
       <div className='container'>
         <div className='calendar'>
@@ -86,26 +64,10 @@ const handleEndDateChange = (event) => {
             style={{ height: 500, width: '100%', backgroundColor: '#FFF', padding: '1.5em' }}
           />
         </div>
-        <form>
-        <h1>REZERWACJE</h1>
-      <br></br>
-      <label> Początek wyjazdu </label>
-      <input
-        type='date'
-        value={startDate}
-        onChange={handleStartDateChange}
-      />
-      <br></br>
-      <label> Koniec wyjazdu </label>
-      <input
-        type='date'
-        value={endDate}
-        onChange={handleEndDateChange}
-      />
-    </form>
-    <button onClick={() => addToCalendar()}>REZERWACJA</button>
+          
       </div>
     </div>
+    <CalendarForm/>
+    </>
   );
 };
-

@@ -17,6 +17,7 @@
             justify-content: space-around;
             .navigation__list__element{
                 a {
+                    text-transform: uppercase;
                     color: #fff;
                     text-decoration: none;
                     &:hover {
