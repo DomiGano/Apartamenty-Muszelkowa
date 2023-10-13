@@ -10,7 +10,8 @@ export const CalendarForm = (props) => {
           props.setAddingMode(false);
         };
 
-    const addToCalendar = () => {
+    const addToCalendar = (e) => {
+      e.preventDefault();
         addDoc(collection(db, "events"), {
           start: startDate,
           end: endDate,
@@ -23,6 +24,7 @@ export const CalendarForm = (props) => {
           });
           setEndDate('')
           setStartDate('')
+          props.dataFetched(false)
       };
       
       const handleStartDateChange = (event) => {
@@ -51,9 +53,8 @@ export const CalendarForm = (props) => {
         value={endDate}
         onChange={handleEndDateChange}
       />
-      
+      <button className='button calendar__menu__button' onClick={addToCalendar}>REZERWACJA</button>
     </form>
-    <button className='button calendar__menu__button' onClick={addToCalendar}>REZERWACJA</button>
     </div>
   );
 };

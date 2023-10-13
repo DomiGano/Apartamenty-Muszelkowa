@@ -32,7 +32,6 @@ export const MyCalendar = (props) => {
             end: new Date(data.end),
           });
         });
-
         setMyEvents(events);
         setDataFetched(true);
       })
@@ -66,11 +65,11 @@ export const MyCalendar = (props) => {
             style={{ height: 500, width: '100%', backgroundColor: '#FFF', padding: '1.5em' }}
           />
         </div>
-          
+        
       </div>
     </div>
     <div className="form__background" style={{ display: addingMode ? 'block' : 'none' }}>
-    <CalendarForm setAddingMode={setAddingMode} />
+    <CalendarForm setAddingMode={setAddingMode} dataFetched={setDataFetched}/>
     </div>
     </>
   );

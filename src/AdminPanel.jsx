@@ -53,10 +53,11 @@ export const AdminPanel = (props) => {
   };
 
 
-  const loginValidation = () => {
+  const loginValidation = (e) => {
+    e.preventDefault();
     if(login === getLogin && password === getPassword) {
-        closeLogin();
         props.setIsAdminLog(true);
+        closeLogin();
     } else {
         alert("BŁĘDNY LOGIN LUB HASŁO");
         closeLogin();
@@ -73,6 +74,7 @@ export const AdminPanel = (props) => {
       <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}placeholder='Hasło'/>
       <button className='button' onClick={loginValidation}>Zaloguj</button>
       </form>
+      
     </div>
     </div>
   );

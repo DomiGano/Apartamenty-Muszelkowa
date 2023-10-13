@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar } from 'react-big-calendar';
 import { Navbar } from './navbar/Navbar';
 import { MyCalendar } from './MyCalendar';
@@ -9,6 +9,7 @@ import { AdminPanel } from './AdminPanel';
 
 export const App = () => {
   const [isAdminLog, setIsAdminLog] = useState(false)
+ 
 
   return (
     <>
@@ -18,10 +19,6 @@ export const App = () => {
     <Location/>
     <Gallery/>
     <AdminPanel isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>
-   
-    
-    
-   
     </>
   )
 }
