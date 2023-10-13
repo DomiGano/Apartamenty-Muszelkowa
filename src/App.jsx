@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Calendar } from 'react-big-calendar';
 import { Navbar } from './navbar/Navbar';
-import polankipark from '../images/polankipark.jpeg'
 import { MyCalendar } from './MyCalendar';
 import { Attractions } from './Attractions';
 import { Location } from './Location';
+import { Gallery } from './Gallery';
 
 export const App = () => {
 
@@ -14,6 +14,11 @@ export const App = () => {
     <Attractions/>
     <MyCalendar/>
     <Location/>
+    <Gallery/>
+   
+    
+    
+   
     </>
   )
 }

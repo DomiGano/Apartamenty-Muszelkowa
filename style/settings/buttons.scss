@@ -3,3 +3,10 @@
     padding: 1em;
     border-radius: 10px;
 }
+
+.section__title {
+    text-transform: uppercase;
+    color: $text-color;
+    font-size: 3em;
+    font-weight: 600;
+}

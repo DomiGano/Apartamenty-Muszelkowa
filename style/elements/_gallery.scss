@@ -1,0 +1,71 @@
+.gallery {
+    background-color: $color2;
+    font-family: $basic-font;
+    padding: 1.5em 0 0 0;
+    .container {
+        position: relative;
+        display: block;
+        .gallery__title {
+            margin: 1em;
+            text-align: center;
+        }
+    .gallery__img {
+        aspect-ratio: 16 / 9;
+        max-width: 100%;
+        transition: 1s;
+        border-radius: 15px;
+    }
+    .gallery__button {
+        background: transparent;
+        border: 0;
+        font-size: 2.5em;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        padding: 0;
+        transform: translateY(-50%);
+        padding: 0.3em;
+        i{
+            opacity: 0.8;
+        }
+        &--left {
+            left: 1em;
+            border-radius: 0 30px 30px 0;
+           
+        }
+        &--right {
+            right: 1em;
+            border-radius: 30px 0px 0px 30px;
+        }
+    }
+    .gallery__active {
+        display: flex;
+        gap: 1.2em;
+        padding: 1.3em;
+        justify-content: center;
+        .dot {
+            background-position: center;
+            background-size: cover;
+            opacity: 0.7;
+            height: 3em;
+            width: 3em;
+            border-radius: 50%;
+        }
+        .active {
+            border: 2px solid $white;
+            background-color: $color3;
+            opacity: 1;
+            transition: all 1;
+            animation: dotAnim 3s ease-in-out;
+
+        }
+    }
+    }
+}
+
+@keyframes dotAnim {
+    0% {scale: 1;}
+    50% {scale: 1.3;}
+    100% {scale: 1;}
+    
+}

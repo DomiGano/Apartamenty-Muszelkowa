@@ -12,8 +12,8 @@ export const Navbar = () => {
 
                 <ul className="navigation__list">
                     <li className="navigation__list__element"><a href="#attractions"><i className="fa-solid fa-person-biking"></i>&nbsp;Atrakcje</a></li>
-                    <li className="navigation__list__element"><a href="#"><i className="fa-solid fa-location-dot"></i>&nbsp;Lokalizacja</a></li>
-                    <li className="navigation__list__element"><a href="#"> <i className="fa-solid fa-calendar-days"></i>&nbsp;Sprawdź Dostępne Terminy</a></li>
+                    <li className="navigation__list__element"><a href="#calendar"> <i className="fa-solid fa-calendar-days"></i>&nbsp;Sprawdź Dostępne Terminy</a></li>
+                    <li className="navigation__list__element"><a href="#location"><i className="fa-solid fa-location-dot"></i>&nbsp;Lokalizacja</a></li>
                     <li className="navigation__list__element"><a href="#"><i className="fa-regular fa-envelope"></i>&nbsp;Kontakt</a></li>
                 </ul>
 

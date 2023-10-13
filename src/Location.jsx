@@ -1,9 +1,12 @@
 import React from "react";
+import polankipark from '../images/polankipark.jpeg'
 
 export const Location = () => {
 
     return (
-        <div className="container">        
+        <>
+        <img className="location__photo" src={polankipark}></img>
+        <div className="container" id="location">        
             <div className="location__box">
                 <div className="map__frame" style={{position: "relative", height: 400, width: 650}}>
                     <div style={{overflow: "hidden", height:400, width:650}}>
@@ -20,5 +23,6 @@ export const Location = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }

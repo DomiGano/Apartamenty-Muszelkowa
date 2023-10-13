@@ -51,11 +51,11 @@ export const MyCalendar = (props) => {
 
   return (
     <>
-    <div className='main__calendar__box'>
+    <div className='main__calendar__box' id="calendar">
       <div className='container'>
         <div className='calendar'>
         <i onClick={() => setAddingMode(true)} className="fa-regular fa-calendar-plus add"></i>
-          <h1 className='calendar__title'>Sprawdź dostępne terminy</h1>
+          <h1 className='calendar__title section__title '>Sprawdź dostępne terminy</h1>
           <Calendar
             messages={messages}
             localizer={localizer}

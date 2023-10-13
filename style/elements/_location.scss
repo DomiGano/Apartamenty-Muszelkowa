@@ -1,6 +1,10 @@
+.location__photo {
+    width: 100%;
+}
+
 .location__box {
   display: flex;
-  padding: 1em;
+  padding: 3em 0;
   .google__map {
     border-radius: 10px 0 0 0;
   }
