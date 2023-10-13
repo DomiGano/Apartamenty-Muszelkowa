@@ -4,6 +4,7 @@ import { Navbar } from './navbar/Navbar';
 import polankipark from '../images/polankipark.jpeg'
 import { MyCalendar } from './MyCalendar';
 import { Attractions } from './Attractions';
+import { Location } from './Location';
 
 export const App = () => {
 
@@ -12,6 +13,7 @@ export const App = () => {
     <Navbar/>
     <Attractions/>
     <MyCalendar/>
+    <Location/>
     </>
   )
 }

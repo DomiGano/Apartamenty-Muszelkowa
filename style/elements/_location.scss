@@ -1,0 +1,31 @@
+.location__box {
+  display: flex;
+  padding: 1em;
+  .google__map {
+    border-radius: 10px 0 0 0;
+  }
+    .location__info {
+        padding: 2em;
+        font-family: $basic-font;
+        color: $text-color;
+        background-color: $color2;
+        border-radius: 0 0 10px 0;
+        &__title {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        .adress {
+            margin-left: 1em;
+            font-size: 1.5em;
+            margin-bottom: 0.3em;
+        }
+        .adress__text {
+            margin-top: 1.5em;
+            background-color: darken($color: $color2, $amount: 5);
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px 5px darken($color: $color2, $amount: 10);
+        }
+    }
+}

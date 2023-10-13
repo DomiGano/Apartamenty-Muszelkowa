@@ -1,11 +1,13 @@
 @import "/style/generic/reset";
 @import "./settings/colors.scss";
 @import "./settings/buttons.scss";
+@import "./settings/variables.scss";
 
 @import "/style/elements/navbar";
 @import "/style/elements/myCalendar";
 @import "/style/elements/calendarMenu";
 @import "/style/elements/atractions";
+@import "/style/elements/location";
 @import 'react-big-calendar/lib/sass/styles';
 
 * {

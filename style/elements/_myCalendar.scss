@@ -2,9 +2,20 @@
 .main__calendar__box {
     background-color: $color2;
     width: 100%;
+    position: relative;
     .container {
         .calendar {
-            font-family: 'Poppins', sans-serif;
+            .add {
+                font-size: 2em;
+                position: absolute;
+                top: 1em;
+                right: 1em;
+                color: $text-color;
+                &:hover {
+                    color: greenyellow;
+                }
+            }
+            font-family: $basic-font;
             padding: 5em;
             width: 100%;
             display: flex;
@@ -12,7 +23,7 @@
             align-items: center;
             flex-direction: column;
             .calendar__title {
-                color: #fff;
+                color: $text-color;
                 font-size: 3em;
                 margin-bottom: 1em;
             }

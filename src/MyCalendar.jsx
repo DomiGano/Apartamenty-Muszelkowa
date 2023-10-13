@@ -7,6 +7,7 @@ import { db } from './firebase';
 import { CalendarForm } from './CalendarForm';
 
 export const MyCalendar = (props) => {
+  const [addingMode, setAddingMode] = useState(false);
   const [myEvents, setMyEvents] = useState([]);
   const [dataFetched, setDataFetched] = useState(false);
 
@@ -53,6 +54,7 @@ export const MyCalendar = (props) => {
     <div className='main__calendar__box'>
       <div className='container'>
         <div className='calendar'>
+        <i onClick={() => setAddingMode(true)} className="fa-regular fa-calendar-plus add"></i>
           <h1 className='calendar__title'>Sprawdź dostępne terminy</h1>
           <Calendar
             messages={messages}
@@ -67,7 +69,9 @@ export const MyCalendar = (props) => {
           
       </div>
     </div>
-    <CalendarForm/>
+    <div className="form__background" style={{ display: addingMode ? 'block' : 'none' }}>
+    <CalendarForm setAddingMode={setAddingMode} />
+    </div>
     </>
   );
 };

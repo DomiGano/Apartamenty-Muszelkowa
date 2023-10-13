@@ -27,6 +27,14 @@ export const Attractions = () => {
             setAttracions(attractions - 1)
         }
     }
+
+
+    const autoNext = () => {
+        const interval = setTimeout(next, 10000);
+
+        return () => clearTimeout(interval);
+    }
+
     useEffect(() => {
         if(attractions == 1) {
             setTitle("Basen")
@@ -42,7 +50,7 @@ export const Attractions = () => {
         }
     }, [attractions])
     
-
+    useEffect(autoNext, [attractions]);
 
     return (
         <div className="carusela" id="attractions">

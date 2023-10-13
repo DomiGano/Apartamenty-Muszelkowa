@@ -8,7 +8,7 @@
         align-items: center;
         .navigation__logo {
             .logo__title {
-                color: #fff;
+                color: $text-color;
             }
         }
         .navigation__list {
@@ -18,7 +18,7 @@
             .navigation__list__element{
                 a {
                     text-transform: uppercase;
-                    color: #fff;
+                    color: $text-color;
                     text-decoration: none;
                     &:hover {
                         color: $color3;

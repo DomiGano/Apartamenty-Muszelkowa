@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { db } from './firebase';
 
-export const CalendarForm = () => {
+export const CalendarForm = (props) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
+
+    const handleAddButtonClick = () => {
+          props.setAddingMode(false);
+        };
 
     const addToCalendar = () => {
         addDoc(collection(db, "events"), {
@@ -29,7 +35,7 @@ export const CalendarForm = () => {
 
   return (
     <div className='calendar__menu'>
-        <i className="fa-solid fa-xmark close"></i>
+        <i onClick={handleAddButtonClick} className="fa-solid fa-xmark close"></i>
         <h4 className='calendar__menu__title'>REZERWACJE</h4>
         <form className='calendar__menu__form'> 
       <label className='calendar__menu__form__label'> Początek wyjazdu</label>
@@ -47,7 +53,7 @@ export const CalendarForm = () => {
       />
       
     </form>
-    <button className='button calendar__menu__button' onClick={() => addToCalendar}>REZERWACJA</button>
+    <button className='button calendar__menu__button' onClick={addToCalendar}>REZERWACJA</button>
     </div>
   );
 };
