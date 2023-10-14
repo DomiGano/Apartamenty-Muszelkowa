@@ -7,6 +7,8 @@ export const Contact = (props) => {
     const [name, setName] = useState("")
     const [text, setText] = useState("")
 
+    const dzien = new Date()
+
     const sendMsg = (e) => {
         if(email.includes("@") && email.length > 5 && name !== "" && text !== "") {
             e.preventDefault();
@@ -14,7 +16,7 @@ export const Contact = (props) => {
                 email: email,
                 name: name,
                 text: text,
-                date: new Date(),
+                date: new Date().toLocaleString(),
               })
                 .catch((e) => {
                   console.error("Error adding document: ", e);

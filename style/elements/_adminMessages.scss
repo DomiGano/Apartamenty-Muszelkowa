@@ -1,0 +1,58 @@
+.admin__messages { 
+    font-family: $basic-font;
+    background-color: $color3;
+    padding: 2em;
+    &__title {
+        text-align: center;
+    }
+    .messages__box {
+        border: 10px solid lighten($color: $color1, $amount: 5);
+        &::-webkit-scrollbar {
+            width: 15px;
+            }
+        &::-webkit-scrollbar-thumb {
+            background-color: $white; 
+            border-radius: 10px;
+        }
+        border-radius: 10px;
+        overflow-y: scroll;
+
+        flex-direction: column;
+        max-height: 500px;
+        margin-top: 2em;
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        background-color: lighten($color: $color1, $amount: 5);
+        .message {
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            background-color: $white;
+            width: 100%;
+            &__name {
+                font-size: 1.5em;
+            }
+            &__email {
+                margin: 0.5em 0.5em;
+            }
+            &__text {
+                line-height: 1.5em;
+                margin-top: 1em;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                .message__core__text {
+                    padding: 1em;
+                    background-color: lighten($color: $black, $amount: 60);
+                    margin-bottom: 0.5em;
+                }
+            }
+            &__date {
+                align-self: flex-end;
+            }
+        }
+    }
+}
