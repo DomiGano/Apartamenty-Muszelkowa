@@ -8,9 +8,10 @@ import { Gallery } from './Gallery';
 import { AdminPanel } from './AdminPanel';
 import { Contact } from './Contact';
 import { AdminMessages } from './AdminMessages';
+import { Footer } from './Footer';
 
 export const App = () => {
-  const [isAdminLog, setIsAdminLog] = useState(true)
+  const [isAdminLog, setIsAdminLog] = useState(false)
  
 
   return (
@@ -22,6 +23,7 @@ export const App = () => {
     <Gallery/>
     {isAdminLog ? null : <AdminPanel isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>}
     {isAdminLog ? <AdminMessages/> : <Contact/>}
+    <Footer isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>
     </>
   )
 }
