@@ -57,7 +57,7 @@ export const Attractions = () => {
             
             <div className="container">
                 <div className="carusela__mainbox">
-                    <img className="carusela__img" src={`../images/image${attractions}.jpg`}></img>
+                    <img className="carusela__img" src={`src/images/image${attractions}.jpg`}></img>
                         <div className="carusela__textbox">
                             <h3 className="carusela__textbox__title">{title}</h3> 
                             <p className="carusela__textbox__text">{text}</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import polankipark from '../images/polankipark.jpeg'
+import polankipark from './images/polankipark.jpeg'
 
 export const Location = () => {
 
