@@ -1,0 +1,90 @@
+.contact {
+    font-family: $basic-font;
+    margin: 3em 0;
+    &__title {
+        color: $color2;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .container {
+        gap: 0.5em;
+        .contact__info {
+            width: 50%;
+            background-color: darken($color: $color2, $amount: 10);
+            padding: 2em;
+            color: $text-color;
+            border-radius: 0 10px 10px 0;
+            position: relative;
+
+            .contact__info__title {
+                color: $text-color;
+                font-weight: 600;
+                margin-bottom: 0.5em;
+                font-size: 1.2em;
+            }
+            .contact__info__text {
+                margin: 1em 0;
+                font-size: 1.5em;
+                .icon {
+                    margin: 0 0.5em 0 0;
+                }
+            }
+            .contact__info__decoration {
+                position: absolute;
+                right: 0.5em;
+                bottom: 0.5em;
+                font-size: 3em;
+                transition: all 1s linear;
+            }
+            .animation__sun {
+                    animation: sun 15s infinite linear;
+            }
+
+        }
+
+        .contact__form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            background-color: $color2;
+            padding: 1.5em;
+            border-radius: 10px 0  0 10px;
+            .contact__form__title {
+                color: $text-color;
+                font-weight: 600;
+                margin-bottom: 0.5em;
+                font-size: 1.2em;
+            }
+            .contact__form__input {
+                padding: 0.5em;
+                margin-bottom: 0.8em;
+            }
+            .contact__form__textarea {
+                padding: 0.5em;
+                font-family: $basic-font;
+                margin-bottom: 0.8em;
+                border-radius: 0 0 0 10px;
+            }
+            .contact__form__button {
+                color: $text-color;
+                font-weight: 600;
+                background-color: darken($color: $color2, $amount: 10);
+                padding: 1em 3em;
+                align-self: flex-end;
+                box-shadow: inset 0 0 15px darken($color: $color2, $amount: 20);
+                transition: 1s all;
+                &:hover {
+                    box-shadow: inset 0 0 5px darken($color: $color2, $amount: 20);
+                    scale: 1.05;  
+                }
+            }
+
+        }
+    }
+}
+
+@keyframes sun {
+    0% {color: yellow; transform: rotate(0deg);}
+    100% {color: yellow; transform: rotate(360deg);}
+    
+}

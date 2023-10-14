@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export const Gallery = () => {
     const [photo, setPhoto] = useState(1)
-    const [gallery, setGalery] = useState(8)
+    const [gallery, setGalery] = useState(9)
 
     const nextPhoto = () => {
         if(photo >= gallery) {

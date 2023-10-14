@@ -6,6 +6,7 @@ import { Attractions } from './Attractions';
 import { Location } from './Location';
 import { Gallery } from './Gallery';
 import { AdminPanel } from './AdminPanel';
+import { Contact } from './Contact';
 
 export const App = () => {
   const [isAdminLog, setIsAdminLog] = useState(false)
@@ -19,6 +20,7 @@ export const App = () => {
     <Location/>
     <Gallery/>
     {isAdminLog ? null : <AdminPanel isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>}
+    <Contact/>
     </>
   )
 }
