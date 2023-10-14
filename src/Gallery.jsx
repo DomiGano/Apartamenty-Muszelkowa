@@ -25,7 +25,7 @@ export const Gallery = () => {
         const dots = []
 
         for(let i = 1; i <= amount; i++) {
-            dots.push(<div key={i} style={{backgroundImage: `url(src/images/gallery/photo${i}.jpg)`.default}} onClick={() => setPhoto(i)} className={photo == i ? "active dot" : "dot"}></div>);
+            dots.push(<div key={i} style={{backgroundImage: `url(src/images/gallery/photo${i}.jpg)`}} onClick={() => setPhoto(i)} className={photo == i ? "active dot" : "dot"}></div>);
         }
         return dots;
     }
@@ -36,7 +36,7 @@ export const Gallery = () => {
             <div className="container">
                 <h2 className="gallery__title section__title">Galeria</h2>
                 <div className="gallery__mainbox">
-                    <img className="gallery__img" src={`src/images/gallery/photo${photo}.jpg`.default}></img>
+                    <img className="gallery__img" src={`src/images/gallery/photo${photo}.jpg`}></img>
                         </div>
                     <button className="gallery__button gallery__button--left" onClick={prevPhoto}><i className="fa-solid fa-circle-arrow-left"></i></button>
                     <button className="gallery__button gallery__button--right" onClick={nextPhoto}><i className="fa-solid fa-circle-arrow-right"></i></button>
