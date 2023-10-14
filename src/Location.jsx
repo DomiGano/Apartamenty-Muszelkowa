@@ -5,7 +5,7 @@ export const Location = () => {
 
     return (
         <>
-        <img className="location__photo" src={polankipark}></img>
+        <img className="location__photo" src={polankipark} alt="Zdjęcie z lotu ptaka na obiekt polanki park"></img>
         <div className="container" id="location">        
             <div className="location__box">
                 <div className="map__frame" style={{position: "relative", height: 400, width: 650}}>
