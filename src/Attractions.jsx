@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import image1 from "./images/image1.jpg"
+import image2 from "./images/image2.jpg"
+import image3 from "./images/image3.jpg"
 
 
 const basenText = "Nasz apartament z basenem to idealne rozwiązanie dla wszystkich, którzy cenią sobie komfort i luksus podczas wakacji. Niezależnie od tego, czy przyjeżdżasz z rodziną, przyjaciółmi czy partnerem, zapewniamy Ci wyjątkowe miejsce, które pozwoli Ci cieszyć się w pełni zasłużonym wypoczynkiem."
@@ -11,6 +14,8 @@ export const Attractions = () => {
     const [attractions, setAttracions] = useState(1)
     const [title, setTitle] = useState("Basen")
     const [text, setText] = useState("")
+
+    const images = [image1, image2 , image3]
 
     const next = () => {
         if(attractions >= 3) {
@@ -57,7 +62,7 @@ export const Attractions = () => {
             
             <div className="container">
                 <div className="carusela__mainbox">
-                    <img className="carusela__img" src={`../images/image${attractions}.jpg`}></img>
+                    <img className="carusela__img" src={images[attractions - 1]}></img>
                         <div className="carusela__textbox">
                             <h3 className="carusela__textbox__title">{title}</h3> 
                             <p className="carusela__textbox__text">{text}</p>
