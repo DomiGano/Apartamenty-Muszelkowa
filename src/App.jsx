@@ -16,7 +16,7 @@ export const App = () => {
 
   return (
     <>
-    <Navbar/>
+    <Navbar isAdminLog={isAdminLog} />
     <Attractions/>
     <MyCalendar isAdminLog={isAdminLog}/>
     <Location/>
