@@ -5,9 +5,11 @@ import 'moment/locale/pl';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import { CalendarForm } from './CalendarForm';
+import { BookingList } from './BookingList';
 
 export const MyCalendar = (props) => {
   const [addingMode, setAddingMode] = useState(false);
+  const [eventList, setEventList] = useState(false);
   const [myEvents, setMyEvents] = useState([]);
   const [dataFetched, setDataFetched] = useState(false);
 
@@ -56,7 +58,8 @@ export const MyCalendar = (props) => {
     <div className='main__calendar__box' id="calendar">
       <div className='container'>
         <div className='calendar'>
-        <i style={{display: props.isAdminLog ? "block" : "none"}} onClick={() => setAddingMode(true)} className="fa-regular fa-calendar-plus add"></i>
+        <i style={{display: props.isAdminLog ? "block" : "none"}} onClick={() => setAddingMode(true)} className="fa-regular fa-calendar-plus admin__icon add"></i>
+        <i style={{display: props.isAdminLog ? "block" : "none"}} onClick={() => {eventList? setEventList(false) : setEventList(true)}} className="fa-solid fa-list admin__icon list"></i>
           <h1 className='calendar__title section__title '>Sprawdź dostępne terminy</h1>
           <Calendar
             messages={messages}
@@ -74,12 +77,7 @@ export const MyCalendar = (props) => {
     <div className="form__background" style={{ display: addingMode ? 'block' : 'none' }}>
     <CalendarForm setAddingMode={setAddingMode} dataFetched={setDataFetched}/>
     </div>
-    <ul style={{display: props.isAdminLog ? "block" : "none"}}  className='booking__list'>
-    {myEvents.map((element) => {
-      return (
-      <li className='list__element' key={element.id}>Od {element.start.getDate()}/{element.start.getMonth() + 1}/{element.start.getFullYear()} do {element.end.getDate()}/{element.end.getMonth() + 1}/{element.end.getFullYear()} Goście: {element.guests} Cena za dobę: {element.price} zł Zaliczka: {element.advance} zł</li>
-      )})}
-      </ul>
+    <BookingList myEvents={myEvents} eventList={eventList}/>
     </>
   );
 };
