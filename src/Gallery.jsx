@@ -37,7 +37,7 @@ export const Gallery = () => {
         const dots = []
 
         for(let i = 1; i <= amount; i++) {
-            dots.push(<div key={i} style={{backgroundImage: galleryPhotos[i-1]}} onClick={() => setPhoto(i)} className={photo == i ? "active dot" : "dot"}></div>);
+            dots.push(<div key={i} style={{backgroundImage: `url(${galleryPhotos[i-1]})`}} onClick={() => setPhoto(i)} className={photo == i ? "active dot" : "dot"}></div>);
         }
         return dots;
     }
