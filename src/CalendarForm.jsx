@@ -14,6 +14,7 @@ export const CalendarForm = (props) => {
         };
 
     const addToCalendar = (e) => {
+      if(guests !== "" && price >= 0 && typeof(price) == "number" && advance >= 0 && typeof(advance) == "number")
       e.preventDefault();
         addDoc(collection(db, "events"), {
           start: startDate,

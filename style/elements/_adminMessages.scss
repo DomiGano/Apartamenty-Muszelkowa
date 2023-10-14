@@ -27,6 +27,7 @@
         align-items: center;
         background-color: lighten($color: $color1, $amount: 5);
         .message {
+            position: relative;
             display: flex;
             flex-direction: column;
             padding: 2em;
@@ -52,6 +53,16 @@
             }
             &__date {
                 align-self: flex-end;
+            }
+            .message_delete {
+                position: absolute;
+                right: 1em;
+                top: 1em;
+                transition: all 1s linear;
+                &:hover {
+                    transform: rotate(-20deg);
+                    color: red;
+                }
             }
         }
     }

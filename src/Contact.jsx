@@ -7,8 +7,6 @@ export const Contact = (props) => {
     const [name, setName] = useState("")
     const [text, setText] = useState("")
 
-    const dzien = new Date()
-
     const sendMsg = (e) => {
         if(email.includes("@") && email.length > 5 && name !== "" && text !== "") {
             e.preventDefault();

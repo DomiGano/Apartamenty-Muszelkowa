@@ -33,9 +33,9 @@ export const AdminPanel = (props) => {
       });
   };
 
-  // Nasłuchuj klawiszy Ctrl + Shift + L
+  //Admin Login Ctrl + Shift + L
   useEffect(() => {
-    function handleKeyPress(event) {
+    const handleKeyPress = (event) => {
       if (event.ctrlKey && event.shiftKey && event.key === 'L' && props.isAdminLog !== true) {
         setIsLoginActive(true);
       }

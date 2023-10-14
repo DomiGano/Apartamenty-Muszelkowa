@@ -27,6 +27,11 @@
         padding: 0.3em;
         i{
             opacity: 0.8;
+            transition: all 0.5s linear;
+            &:hover {
+                opacity: 1;
+                scale: 1.1;
+            }
         }
         &--left {
             left: 1em;
