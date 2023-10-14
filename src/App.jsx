@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar } from 'react-big-calendar';
-import { Navbar } from './navbar/Navbar';
+import { Navbar } from './Navbar';
 import { MyCalendar } from './MyCalendar';
 import { Attractions } from './Attractions';
 import { Location } from './Location';
