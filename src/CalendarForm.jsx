@@ -5,6 +5,9 @@ import { db } from './firebase';
 export const CalendarForm = (props) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
+    const [guests, setGuests] = useState();
+    const [price, setPrice] = useState(0);
+    const [advance, setAdvance] = useState(0);
 
     const handleAddButtonClick = () => {
           props.setAddingMode(false);
@@ -15,6 +18,9 @@ export const CalendarForm = (props) => {
         addDoc(collection(db, "events"), {
           start: startDate,
           end: endDate,
+          guests: guests,
+          price: price,
+          advance: advance,
         })
           .then((docRef) => {
             alert("Termin został zarezerwowany");
@@ -24,16 +30,12 @@ export const CalendarForm = (props) => {
           });
           setEndDate('')
           setStartDate('')
+          setGuests('')
+          setPrice(0)
+          setAdvance(0)
           props.dataFetched(false)
       };
-      
-      const handleStartDateChange = (event) => {
-        setStartDate(event.target.value);
-      };
-      
-      const handleEndDateChange = (event) => {
-        setEndDate(event.target.value);
-      };
+            
 
   return (
     <div className='calendar__menu'>
@@ -44,14 +46,32 @@ export const CalendarForm = (props) => {
       <input
         type='date'
         value={startDate}
-        onChange={handleStartDateChange}
+        onChange={(e) => setStartDate(e.target.value)}
       />
      
       <label className='calendar__menu__form__label'>Koniec wyjazdu</label>
       <input
         type='date'
         value={endDate}
-        onChange={handleEndDateChange}
+        onChange={(e) => setEndDate(e.target.value)}
+      />
+      <label className='calendar__menu__form__label'>Goście</label>
+      <input
+        type='text'
+        value={guests}
+        onChange={(e) => setGuests(e.target.value)}
+      />
+        <label className='calendar__menu__form__label'>Cena za dobę</label>
+      <input
+        type='text'
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
+      />
+         <label className='calendar__menu__form__label'>Zaliczka</label>
+      <input
+        type='text'
+        value={advance}
+        onChange={(e) => setAdvance(e.target.value)}
       />
       <button className='button calendar__menu__button' onClick={addToCalendar}>REZERWACJA</button>
     </form>

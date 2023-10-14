@@ -30,6 +30,9 @@ export const MyCalendar = (props) => {
             title: 'REZERWACJA',
             start: new Date(data.start),
             end: new Date(data.end),
+            guests: data.guests,
+            price: data.price,
+            advance: data.advance,
           });
         });
         setMyEvents(events);
@@ -71,6 +74,12 @@ export const MyCalendar = (props) => {
     <div className="form__background" style={{ display: addingMode ? 'block' : 'none' }}>
     <CalendarForm setAddingMode={setAddingMode} dataFetched={setDataFetched}/>
     </div>
+    <ul style={{display: props.isAdminLog ? "block" : "none"}}  className='booking__list'>
+    {myEvents.map((element) => {
+      return (
+      <li className='list__element' key={element.id}>Od {element.start.getDate()}/{element.start.getMonth() + 1}/{element.start.getFullYear()} do {element.end.getDate()}/{element.end.getMonth() + 1}/{element.end.getFullYear()} Goście: {element.guests} Cena za dobę: {element.price} zł Zaliczka: {element.advance} zł</li>
+      )})}
+      </ul>
     </>
   );
 };

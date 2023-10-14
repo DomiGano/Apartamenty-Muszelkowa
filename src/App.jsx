@@ -18,7 +18,7 @@ export const App = () => {
     <MyCalendar isAdminLog={isAdminLog}/>
     <Location/>
     <Gallery/>
-    <AdminPanel isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>
+    {isAdminLog ? null : <AdminPanel isAdminLog={isAdminLog} setIsAdminLog={setIsAdminLog}/>}
     </>
   )
 }

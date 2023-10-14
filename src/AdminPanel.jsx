@@ -36,7 +36,7 @@ export const AdminPanel = (props) => {
   // Nasłuchuj klawiszy Ctrl + Shift + L
   useEffect(() => {
     function handleKeyPress(event) {
-      if (event.ctrlKey && event.shiftKey && event.key === 'L') {
+      if (event.ctrlKey && event.shiftKey && event.key === 'L' && props.isAdminLog !== true) {
         setIsLoginActive(true);
       }
     }
@@ -66,13 +66,13 @@ export const AdminPanel = (props) => {
 
   return (
     <div style={{display: isLoginActive ? `block` : `none`}} >
-        <div className='adminLogin'>
+        <div className='admin__login'>
         <i onClick={closeLogin} className="fa-solid fa-xmark close"></i>
-        <h2>Login</h2>
-        <form>
-      <input type='text' value={login} onChange={(e) => setLogin(e.target.value)} placeholder='Login'/>
-      <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}placeholder='Hasło'/>
-      <button className='button' onClick={loginValidation}>Zaloguj</button>
+        <h2 className='admin__login__title'>Login</h2>
+        <form className='admin__login__form'>
+      <input className='admin__login__input' type='text' value={login} onChange={(e) => setLogin(e.target.value)} placeholder='Login'/>
+      <input className='admin__login__input' type='password' value={password} onChange={(e) => setPassword(e.target.value)}placeholder='Hasło'/>
+      <button className='button admin__login__button' onClick={loginValidation}>Zaloguj</button>
       </form>
       
     </div>
