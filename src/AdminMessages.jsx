@@ -41,7 +41,7 @@ export const AdminMessages = () => {
             <h2 className="admin__messages__title section__title">Wiadomości</h2>
             <div className='container'>
                 <ul className='messages__box'>
-            {myMessages.map((element) => {
+            {myMessages.length <= 0 ? <h2 style={{fontSize: "1.5em"}} className='section__title'>Brak Nowych wiadomości</h2> : myMessages.map((element) => {
                 return (
                     <li className='message' key={element.id}>
                         <p className='message__name'>Od: {element.name}</p>
